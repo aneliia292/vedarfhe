@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="{% url 'create' %}">Create</a>
+</div>
+<hr>
+    {% for post in post %}
+    <p>{{post.id}}</p>
+    <h1>{{post.title}}</h1>
+    <h2>{{post.content}}</h2>
+    <p>{{post.date}}</p>
+    <h3>Категория - {{post.category}}</h3>
+
+    <hr>
+    {% endfor %}
+<p>{{task}}</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="{% url 'getClass' %}">Home</a>
+    <a href="{% url 'createClass' %}">Create</a>
+</div>
+<hr>
+{% for item in object_list %}
+<p>{{item.pk}}</p>
+<p>{{item.task}}</p>
+<p>{{item.data}}</p>
+<p>{{item.status}}</p>
+
+<div>
+    <a href="{% url 'detailClass' item.pk %}">Detail</a>
+    <a href="{% url 'updateClass' item.pk %}">UpdateClass</a>
+    <a href="{% url 'deleteClass' item.pk %}">deleteClass</a>
+</div>
+{% endfor %}
+<p>{{task}}</p>
+</body>
+</html>
